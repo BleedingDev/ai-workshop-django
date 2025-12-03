@@ -22,6 +22,16 @@ dev = [
 line-length = 88
 target-version = "py312"
 
+[tool.ruff.format]
+# Use double quotes for strings (like Black)
+quote-style = "double"
+# Indent with spaces (like Black)
+indent-style = "space"
+# Respect magic trailing commas (like Black)
+skip-magic-trailing-comma = false
+# Auto-detect line endings
+line-ending = "auto"
+
 [tool.ruff.lint]
 # Enable strict rules to expose the "mess"
 select = [

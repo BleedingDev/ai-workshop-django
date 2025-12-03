@@ -32,3 +32,27 @@ services:
     command: mypy conduit
     volumes:
       - .:/app
+
+  # Optional: Check formatting (doesn't modify files)
+  format-check:
+    build: .
+    profiles: ["tools"]
+    command: ruff format --check .
+    volumes:
+      - .:/app
+
+  # Optional: Fix formatting (modifies files)
+  format:
+    build: .
+    profiles: ["tools"]
+    command: ruff format .
+    volumes:
+      - .:/app
+
+  # Optional: Fix all auto-fixable linting issues
+  lint-fix:
+    build: .
+    profiles: ["tools"]
+    command: ruff check --fix .
+    volumes:
+      - .:/app

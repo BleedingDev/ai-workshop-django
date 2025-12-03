@@ -78,21 +78,52 @@ python manage.py createsuperuser
 
 **Note:** Login uses email, not username.
 
-## The "Trap" - Linting Errors
+## The "Trap" - Code Quality Issues
 
-This codebase has strict linting configured but the code is NOT fixed:
+This codebase has strict linting and formatting configured but **NOT applied**:
+
+| Check | Command | Issues |
+|-------|---------|--------|
+| Linting | `docker compose run --rm lint` | ~217 errors |
+| Formatting | `docker compose run --rm format-check` | 34 files |
+| Type checking | `docker compose run --rm typecheck` | Type errors |
+
+### Fix Commands (for workshop)
 
 ```bash
-# With Docker
-docker compose run --rm lint        # ~200+ ruff errors
-docker compose run --rm typecheck   # mypy errors
+# Check issues (read-only)
+docker compose run --rm lint           # See linting errors
+docker compose run --rm format-check   # See formatting issues
+docker compose run --rm typecheck      # See type errors
 
-# Local
-ruff check .        # ~200+ errors
-mypy conduit        # Type errors
+# Auto-fix (modifies files)
+docker compose run --rm lint-fix       # Fix auto-fixable lint issues
+docker compose run --rm format         # Fix formatting
+
+# Local commands
+ruff check .                           # Lint check
+ruff check --fix .                     # Lint fix
+ruff format --check .                  # Format check
+ruff format .                          # Format fix
+mypy conduit                           # Type check
 ```
 
 **Workshop Goal:** Fix these errors using AI assistance.
+
+## Enforce Consistency (Pre-commit)
+
+After fixing issues, enforce consistency with pre-commit hooks:
+
+```bash
+# Install pre-commit
+pip install pre-commit
+
+# Install hooks (runs on every commit)
+pre-commit install
+
+# Run manually on all files
+pre-commit run --all-files
+```
 
 ## Verify Everything Works
 
@@ -132,5 +163,6 @@ curl -I http://localhost:8000/admin/
 - Django REST Framework 3.14+
 - SQLite (default)
 - Docker + Docker Compose
-- Ruff (linting)
+- Ruff (linting + formatting)
 - mypy + django-stubs (type checking)
+- pre-commit (git hooks)
