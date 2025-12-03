@@ -1,6 +1,6 @@
 # Task 2: Model Comparison
 
-Try the same prompt with different models (GPT-4o vs GPT-4o-mini):
+Try the same prompt with different models:
 
 ```
 Write a Django middleware that logs request duration
