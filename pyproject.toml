@@ -73,9 +73,25 @@ ignore = []
 
 [tool.mypy]
 python_version = "3.12"
-check_untyped_defs = true
-ignore_missing_imports = true
 plugins = ["mypy_django_plugin.main"]
+
+# Strict mode settings
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+# Allow some flexibility for Django
+ignore_missing_imports = true
+allow_untyped_globals = false
 
 [tool.django-stubs]
 django_settings_module = "conduit.settings"

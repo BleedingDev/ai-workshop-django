@@ -84,9 +84,11 @@ This codebase has strict linting and formatting configured but **NOT applied**:
 
 | Check | Command | Issues |
 |-------|---------|--------|
-| Linting | `docker compose run --rm lint` | ~217 errors |
-| Formatting | `docker compose run --rm format-check` | 34 files |
-| Type checking | `docker compose run --rm typecheck` | Type errors |
+| Linting | `docker compose run --rm lint` | **217 errors** |
+| Formatting | `docker compose run --rm format-check` | **34 files** |
+| Type checking | `docker compose run --rm typecheck` | **103 errors** |
+
+**Total: 354 issues to fix!**
 
 ### Fix Commands (for workshop)
 
