@@ -129,10 +129,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CORS_ORIGIN_WHITELIST = (
-    '0.0.0.0:4000',
-    'localhost:4000',
-)
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://0.0.0.0:4000',
+    'http://localhost:4000',
+]
 
 # Tell Django about the custom `User` model we created. The string
 # `authentication.User` tells Django we are referring to the `User` model in

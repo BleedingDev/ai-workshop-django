@@ -1,0 +1,71 @@
+[project]
+name = "ai-workshop-django"
+version = "0.1.0"
+description = "Django RealWorld Example App - AI Workshop Training Dataset"
+requires-python = ">=3.12"
+dependencies = [
+    "Django>=4.2",
+    "django-cors-headers>=4.3",
+    "django-extensions>=3.2",
+    "djangorestframework>=3.14",
+    "PyJWT>=2.8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.1.0",
+    "mypy>=1.7.0",
+    "django-stubs>=4.2.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+# Enable strict rules to expose the "mess"
+select = [
+    "E",      # pycodestyle errors
+    "F",      # pyflakes
+    "B",      # flake8-bugbear
+    "I",      # isort
+    "UP",     # pyupgrade
+    "PL",     # pylint
+    "RUF",    # ruff-specific
+    "N",      # pep8-naming
+    "S",      # flake8-bandit (security)
+    "C90",    # mccabe complexity
+    "T20",    # flake8-print
+    "SIM",    # flake8-simplify
+    "PTH",    # flake8-use-pathlib
+    "ERA",    # eradicate (commented code)
+    "TRY",    # tryceratops
+    "FBT",    # flake8-boolean-trap
+    "A",      # flake8-builtins
+    "COM",    # flake8-commas
+    "C4",     # flake8-comprehensions
+    "DJ",     # flake8-django
+    "EM",     # flake8-errmsg
+    "G",      # flake8-logging-format
+    "INP",    # flake8-no-pep420
+    "PIE",    # flake8-pie
+    "RSE",    # flake8-raise
+    "RET",    # flake8-return
+    "SLF",    # flake8-self
+    "SLOT",   # flake8-slots
+    "TCH",    # flake8-type-checking
+    "ARG",    # flake8-unused-arguments
+    "PTH",    # flake8-use-pathlib
+    "PERF",   # perflint
+    "FURB",   # refurb
+]
+ignore = []
+
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true
+ignore_missing_imports = true
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "conduit.settings"

@@ -1,0 +1,37 @@
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Misc
+*.log
+*.pot
+*.pyc
+.DS_Store
+Thumbs.db
+
+# Keep these
+!requirements.txt
+!pyproject.toml
