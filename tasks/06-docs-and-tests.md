@@ -3,7 +3,7 @@
 Select a class (e.g., `Article` in `conduit/apps/articles/models.py`), then:
 
 ```
-/doc
+Generate code -> Generate Docs
 ```
 
 For tests:
