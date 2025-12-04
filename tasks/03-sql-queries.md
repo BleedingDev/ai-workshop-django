@@ -1,13 +1,13 @@
-# Task 3: SQL Queries
+# Task 3: SQL Queries (Copilot Chat + File Context)
 
-**Files:** `conduit/apps/articles/models.py`, `conduit/apps/authentication/models.py`
-
-Open the models file, select a model class, then ask:
-
-```
-Generate a SQL query to find the top 10 most favorited articles with author usernames
-```
+1. Open `conduit/apps/articles/models.py`
+2. Open Copilot Chat
+3. Use `#file` to reference the models:
 
 ```
-Write a Django ORM query for the same thing
+#file:conduit/apps/articles/models.py Generate a SQL query to find top 10 most favorited articles with author usernames
+```
+
+```
+#file:conduit/apps/articles/models.py Write the Django ORM equivalent
 ```
